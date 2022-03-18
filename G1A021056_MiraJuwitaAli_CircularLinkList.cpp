@@ -34,9 +34,7 @@ struct Node *Start(struct Node *head, int data)
     temp -> data = data;
     head = temp;
     head -> next = head;
-        }
-    else
-    {
+        } else {
     temp -> data = data;
     temp -> next = head -> next;
     head -> next = temp;
@@ -53,11 +51,9 @@ struct Node *End(struct Node *head, int data)
     temp -> data = data;
     head = temp;
     head -> next = head;
-        }
-    else
-    {
-    do
-    {
+        } else {
+    do 
+	{
         a = a -> next;
     } while (a -> next != head);							
     temp -> data = data;
@@ -80,13 +76,10 @@ struct Node *Middle(struct Node *head, int data, int index)
     {
         cout << "Data yang anda masukkan salah, mohon input data dengan benar" << endl;
         return head;
-    }
-    if (index == 0)								
-    {
+    } if (index == 0) {
         head = Start(head,data);
         return head;
-    }
-    if (index == len)							
+    } if (index == len)							
     {
         head = End(head,data);
         return head;
@@ -97,8 +90,7 @@ struct Node *Middle(struct Node *head, int data, int index)
         a = a -> next;
     } while (a -> next != head);
     len = 0;
-    while (1)
-    {
+    while (1) {
         if (len == index)						
         {
             temp -> data = data;
@@ -118,16 +110,10 @@ struct Node *First(struct Node* head)
     if (head == NULL) {							
         cout << "List kosong" << endl;
         return NULL;
-    }
-
-    if (prev->next == prev)									
-    {
+    } if (prev->next == prev){
         head = NULL;
         return head;
-    }
-
-    while (prev->next != head)
-    {
+    } while (prev->next != head) {
         prev = prev->next;
     }
 
@@ -145,16 +131,10 @@ struct Node *Last(struct Node* head)
     if (head == NULL) {										
         cout << "List kosong" << endl;
         return NULL;
-    }
-
-    if (curr->next == curr)									
-    {
+    } if (curr->next == curr) {
         head = NULL;
         return head;
-    }
-
-    while (curr->next != head)
-    {
+    } while (curr->next != head) {
         prev = curr;
         curr = curr->next;
     }
@@ -174,22 +154,13 @@ struct Node *Position(struct Node* head, int index)
     if (head == NULL) {										
         cout << "List kosong" << endl;
         return NULL;
-    }
-
-    if (index > len || index < 0)								
-    {
+    } if (index > len || index < 0) {
         cout << "Data yang anda berikan salah, data tidak dapat dihapus!" << endl;
         return head;
-    }
-
-    if (index == 0)
-    {
+    } if (index == 0) {
         First(head);
         return head;
-    }
-
-    if (index == len)
-    {
+    } if (index == len) {
         Last(head);
         return head;
     }
@@ -219,9 +190,8 @@ void Display(struct Node *head)
         cout << "Linked list kosong" << endl;
         return;
     }
-
+    
     t = head;
-
     do
     {
         cout << t -> data << " -> ";
